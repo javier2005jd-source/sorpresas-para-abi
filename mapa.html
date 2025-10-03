@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Algún Día ✈️</title>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    background: url('mapa.png') no-repeat center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+
+  #avion {
+    position: absolute;
+    width: 50px;
+    left: 50%;   /* posición inicial horizontal (Chile) */
+    top: 85%;    /* posición inicial vertical (casi abajo) */
+    transform-origin: center;
+    animation: vuelo 4s ease-in-out forwards;
+  }
+
+  @keyframes vuelo {
+    0% {
+      transform: translateX(0) translateY(0) rotate(0deg); /* inicio abajo */
+    }
+    50% {
+      transform: translateX(-40px) translateY(-140px) rotate(-10deg); /* curva a la izquierda mientras sube */
+    }
+    100% {
+      transform: translateX(-60px) translateY(-280px) rotate(25deg); /* aterrizaje un poco a la izquierda */
+    }
+  }
+
+  button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ff69b4;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+</style>
+</head>
+<body>
+
+  <img id="avion" src="avion.png.png" alt="Avión">
+  <button onclick="volver()">Volver</button>
+
+<script>
+  function volver() {
+    window.location.href = 'carta.html'; // ajusta al nombre de tu página principal
+  }
+</script>
+</body>
+</html>
+
